@@ -1,0 +1,72 @@
+@font-face {
+    src: url(fonts/Old-fantasyupper-case.ttf);
+    font-family: art;
+}
+
+header, main {
+    margin-top: 50px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: art;
+}
+.title {
+    height: 200px;
+    width: 100%;
+    max-width: 1220px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 35px;
+
+}
+
+.gameElement {
+    height: 200px;
+    width: 100%;
+    max-width: 700px;
+    border: solid black 5px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.gameElement .item:hover {
+    cursor: pointer;
+}
+
+.gameRound {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 620px;
+    display: flex;
+    align-items: center;
+
+}
+
+.gameRound .player, .gameRound .comp {
+    height: 200px;
+    width: 200px;
+    border: solid black 5px;
+    border-radius: 12px;
+}
+
+.gameRound .sign {
+    height: 200px;
+    width: 200px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerBox, .compBox {
+    text-align: center;
+}
+
+.playerScore, .compScore {
+    font-size: 30px;
+}

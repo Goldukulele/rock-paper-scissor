@@ -5,9 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fixing this up</title>
+    <script src="https://kit.fontawesome.com/65b851e644.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<p>Just a blank page. Using console to play the game. We're going to add more in this</p>
-<scrip src="myscripts.js"></script>
+    <header>
+        <div class="title">
+            <h1 class="rock">Rock</h1>
+            <h1 class="paper">Paper</h1>
+            <h1 class="scissor">Scissors</h1>
+        </div>
+<!--        <h1>
+            <span>ROCK</span>
+            <span>PAPER</span>
+            <span>SCISSOR</span>
+        </h1>-->
+    </header>
+    <main>
+        <div class="gameElement">
+            <div class="item far fa-hand-rock fa-7x"></div>
+            <div class="item far fa-hand-paper fa-7x"></div>
+            <div class="item far fa-hand-scissors fa-7x"></div>
+        </div>
+        <div class="gameRound">
+            <div class="playerBox">
+                <h2 class="playerScore">0</h2>
+                <div class="player">
+
+                </div>
+                <h3>PLAYER</h3>
+            </div>
+            <div class="sign">
+                <h1>VS</h1>
+            </div>
+            <div class="compBox">
+                <h2 class="compScore">0</h2>
+                <div class="comp">
+
+                </div>
+                <h3>CPU</h3>
+            </div>
+        </div>
+    </main>
+
+<script src="myscripts.js"></script>
 </body>
 </html>
