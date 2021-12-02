@@ -6,8 +6,12 @@ const playerScoreDisplay = document.querySelector('.playerScore');
 const compScoreDisplay = document.querySelector('.compScore');
 const gameChecker = document.querySelector('.gameChecker');
 
+const rockColor = document.querySelector('.rockColor');
+
 const content = document.createElement('div');
-const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+const roundContent = document.createElement('div');
+const roundCheck = document.createElement('div');
+const resetButton = document.createElement('button');
 
 let playerValue = '';
 let compValue = '';
@@ -71,12 +75,22 @@ function gameScore() {
         case (playerValue === 'paper' && compValue === 'rock'):
         case (playerValue === 'scissors' && compValue === 'paper'):
             playerScore += 1;
+            roundCheck.classList.add('roundCheck');
+            roundCheck.textContent = `Your ${playerValue} beats ${compValue}`;
+            gameChecker.appendChild(roundCheck);
             break;
         case (compValue === 'rock' && playerValue === 'scissors'):
         case (compValue === 'paper' && playerValue === 'rock'):
         case (compValue === 'scissors' && playerValue === 'paper'):
             compScore += 1;
+            roundCheck.classList.add('roundCheck');
+            roundCheck.textContent = `Your ${playerValue} loses to ${compValue}`;
+            gameChecker.appendChild(roundCheck);
             break;
+        default:
+            roundCheck.classList.add('roundCheck');
+            roundCheck.textContent = `Your ${playerValue} draws with ${compValue}`;
+            gameChecker.appendChild(roundCheck);
     }
 
     playerScoreDisplay.textContent = playerScore;
@@ -101,14 +115,30 @@ function gameEnd() {
         content.textContent = 'Defeat . . .';
         elements.appendChild(content);
     }
-    
+
+    let childTwo = gameChecker.firstElementChild;
+    while (childTwo) {
+        gameChecker.removeChild(childTwo);
+        childTwo = gameChecker.firstElementChild;
+    }
+    resetButton.classList.add('play-again');
+    resetButton.textContent = 'reset';
+    gameChecker.appendChild(resetButton);
+    document.querySelector('.play-again').addEventListener('click', () => {
+        window.location.reload();
+    });
 }
 
 function checkRound() {
-    gameChecker.removeChild(gameChecker.firstElementChild);
-    content.classList.add('round')
-    content.textContent = `Round ${round} !`;
-    gameChecker.appendChild(content);
+    let child = gameChecker.firstElementChild;
+    while (child) {
+        gameChecker.removeChild(child);
+        child = gameChecker.firstElementChild;
+    }
+
+    roundContent.classList.add('roundContent')
+    roundContent.textContent = `Round ${round} !`;
+    gameChecker.appendChild(roundContent);
 
 }
 
@@ -116,9 +146,8 @@ function playRound(item) {
     round += 1;
     playerValue = playerChoice(item);
     compValue = computerChoice();
+    checkRound();
     gameScore();
-    checkRound()
-
 }
 
 function playGame() {

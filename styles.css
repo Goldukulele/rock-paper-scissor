@@ -25,7 +25,7 @@ header, main {
     align-items: center;
     font-size: 35px;
     text-shadow: 3px 4px black;
-
+    user-select: none;
 }
 
 .title .rock {
@@ -57,7 +57,7 @@ header, main {
     
 }
 
-.gameElement .item:hover {
+.gameElement .item:hover, .play-again:hover {
     cursor: pointer;
     transform: scale(1.1);
     transition: all .3s;
@@ -102,7 +102,6 @@ header, main {
 }
 
 .gameRound {
-
     width: 100%;
     max-width: 620px;
     display: flex;
@@ -128,11 +127,12 @@ header, main {
 .playerScore {
     text-shadow: 3px 4px black;
     color: gold;
+    user-select: none;
 }
 
 .compScore {
     text-shadow: 2px 2px white;
-
+    user-select: none;
 }
 
 .playerScore, .compScore {
@@ -162,6 +162,7 @@ header, main {
     color: white;
     opacity: .7;
     text-shadow: 3px 4px black;
+    user-select: none;
 }
 
 .playerBox, .compBox {
@@ -173,11 +174,13 @@ header, main {
     color: gold;
     font-size: 25px;
     text-shadow: 3px 4px black;
+    user-select: none;
 }
 
 .compBox h3 {
     font-size: 25px;
     text-shadow: 3px 4px white;
+    user-select: none;
 }
 
 
@@ -190,6 +193,7 @@ header, main {
     border-radius: 12px;
     box-shadow: 3px 4px;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     background-color: rgba(240, 240, 240, .9);
@@ -199,10 +203,35 @@ header, main {
     font-size: 25px;
     text-align: center;
     text-shadow: 1px 1px black;
+    user-select: none;
 }
 
-.round {
+.roundContent {
+    margin-top: -30px;
     font-size: 40px;
     text-align: center;
     text-shadow: 1px 1px black;
+    user-select: none;
+}
+
+.roundCheck {
+    margin-top: -25px;
+    font-size: 25px;
+    text-align: center;
+    text-shadow: 1px 1px black;
+    user-select: none;
+}
+
+.play-again {
+    height: 120px;
+    width: 220px;
+    font-family: art;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 3px black;
+    border: solid cornsilk 10px;
+    border-radius: 12px;
+    box-shadow: 3px 4px black;
+    background-color: red;
 }
