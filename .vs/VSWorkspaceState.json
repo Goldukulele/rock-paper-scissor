@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\fonts",
+    "\\images"
   ],
+  "SelectedNode": "\\images\\8bit.png",
   "PreviewInSolutionExplorer": false
 }

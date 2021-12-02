@@ -3,6 +3,11 @@
     font-family: art;
 }
 
+body {
+    background-image: url(images/8bit.png);
+    background-attachment: fixed;
+    background-size: cover;
+}
 header, main {
     margin-top: 50px;
     display:flex;
@@ -19,27 +24,85 @@ header, main {
     justify-content: space-evenly;
     align-items: center;
     font-size: 35px;
+    text-shadow: 3px 4px black;
 
+}
+
+.title .rock {
+    color: red;
+    opacity: .7;
+}
+
+.title .paper {
+    color: blue;
+    opacity: .7;
+}
+
+.title .scissors {
+    color: green;
+    opacity: .7;
 }
 
 .gameElement {
     height: 200px;
     width: 100%;
     max-width: 700px;
-    border: solid black 5px;
+    border: solid cornsilk 10px;
     border-radius: 12px;
+    box-shadow: 3px 4px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-
+    background-color: rgba(240, 240, 240, .4);
+    
 }
 
 .gameElement .item:hover {
     cursor: pointer;
+    transform: scale(1.1);
+    transition: all .3s;
+}
+
+.gameElement .fa-hand-rock {
+    color: red;
+    text-shadow: 2px 3px darkred;
+ 
+}
+
+.gameElement .fa-hand-paper {
+    color: blue;
+    text-shadow: 2px 3px black;
+
+}
+
+.gameElement .fa-hand-scissors {
+    color: green;
+    text-shadow: 2px 3px darkgreen;
+
+}
+
+
+.win {
+    color: gold;
+    font-size: 60px;
+    user-select: none;
+    text-shadow: 3px 4px black;
+}
+
+.lose {
+    color: darkred;
+    font-size: 70px;
+    user-select: none;
+    text-shadow: 3px 4px black;
+}
+.mainBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .gameRound {
-    margin-top: 30px;
+
     width: 100%;
     max-width: 620px;
     display: flex;
@@ -50,10 +113,45 @@ header, main {
 .gameRound .player, .gameRound .comp {
     height: 200px;
     width: 200px;
-    border: solid black 5px;
+    border: solid cornsilk 5px;
+    box-shadow: 3px 4px;
     border-radius: 12px;
 }
 
+.player, .comp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(240, 240, 240, .4);
+}
+
+.playerScore {
+    text-shadow: 3px 4px black;
+    color: gold;
+}
+
+.compScore {
+    text-shadow: 2px 2px white;
+
+}
+
+.playerScore, .compScore {
+    font-size: 40px;
+}
+
+
+.player .fa-hand-rock, .comp .fa-hand-rock {
+    color: red;
+    text-shadow: 2px 3px darkred;
+}
+.player .fa-hand-paper, .comp .fa-hand-paper {
+    color: blue;
+    text-shadow: 2px 3px black;
+}
+.player .fa-hand-scissors, .comp .fa-hand-scissors {
+    color: green;
+    text-shadow: 2px 3px darkgreen;
+}
 .gameRound .sign {
     height: 200px;
     width: 200px;
@@ -61,12 +159,50 @@ header, main {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+    opacity: .7;
+    text-shadow: 3px 4px black;
 }
 
 .playerBox, .compBox {
     text-align: center;
+
 }
 
-.playerScore, .compScore {
-    font-size: 30px;
+.playerBox h3 {
+    color: gold;
+    font-size: 25px;
+    text-shadow: 3px 4px black;
+}
+
+.compBox h3 {
+    font-size: 25px;
+    text-shadow: 3px 4px white;
+}
+
+
+.gameChecker {
+    margin-top: 50px;
+    height: 200px;
+    width: 100%;
+    max-width: 700px;
+    border: solid cornsilk 10px;
+    border-radius: 12px;
+    box-shadow: 3px 4px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(240, 240, 240, .9);
+}
+
+.howToStart {
+    font-size: 25px;
+    text-align: center;
+    text-shadow: 1px 1px black;
+}
+
+.round {
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 1px 1px black;
 }

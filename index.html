@@ -13,41 +13,42 @@
         <div class="title">
             <h1 class="rock">Rock</h1>
             <h1 class="paper">Paper</h1>
-            <h1 class="scissor">Scissors</h1>
+            <h1 class="scissors">Scissors</h1>
         </div>
-<!--        <h1>
-            <span>ROCK</span>
-            <span>PAPER</span>
-            <span>SCISSOR</span>
-        </h1>-->
     </header>
     <main>
         <div class="gameElement">
-            <div class="item far fa-hand-rock fa-7x"></div>
-            <div class="item far fa-hand-paper fa-7x"></div>
-            <div class="item far fa-hand-scissors fa-7x"></div>
+            <div class="item far fa-hand-rock fa-7x" id="rock"></div>
+            <div class="item far fa-hand-paper fa-7x" id="paper"></div>
+            <div class="item far fa-hand-scissors fa-7x" id="scissors"></div>
         </div>
-        <div class="gameRound">
-            <div class="playerBox">
-                <h2 class="playerScore">0</h2>
-                <div class="player">
-
+        <div class="mainBody">
+            <div class="gameRound">
+                <div class="playerBox">
+                    <h2 class="playerScore">0</h2>
+                    <div class="player">
+                        <div class="playerImage"></div>
+                    </div>
+                    <h3>PLAYER</h3>
                 </div>
-                <h3>PLAYER</h3>
-            </div>
-            <div class="sign">
-                <h1>VS</h1>
-            </div>
-            <div class="compBox">
-                <h2 class="compScore">0</h2>
-                <div class="comp">
-
+                <div class="sign">
+                    <h1>VS</h1>
                 </div>
-                <h3>CPU</h3>
+                <div class="compBox">
+                    <h2 class="compScore">0</h2>
+                    <div class="comp">
+                        <div class="compImage"></div>
+                    </div>
+                    <h3>CPU</h3>
+                </div>
             </div>
+            <div class="gameChecker">
+                <div class="howToStart">Click on <br /> <span style="color: red">Rock</span>   <span style="color: blue">Paper</span> or <span style="color: green">Scissors</span><br />  to start</div>
+            </div>
+
         </div>
     </main>
 
-<script src="myscripts.js"></script>
+    <script src="myscripts.js"></script>
 </body>
 </html>
