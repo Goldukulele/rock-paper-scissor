@@ -99,6 +99,7 @@ header, main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .gameRound {
@@ -188,6 +189,7 @@ header, main {
     margin-top: 50px;
     height: 200px;
     width: 100%;
+    min-width: 670px;
     max-width: 700px;
     border: solid cornsilk 10px;
     border-radius: 12px;
@@ -207,21 +209,35 @@ header, main {
 }
 
 .roundContent {
-    margin-top: -30px;
+    margin-top: -100px;
     font-size: 40px;
     text-align: center;
-    text-shadow: 1px 1px black;
+    text-shadow: 2px 2px black;
     user-select: none;
+    position: absolute;
 }
 
 .roundCheck {
-    margin-top: -25px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 14px;
+}
+.beat, .loseTo{
     font-size: 25px;
     text-align: center;
     text-shadow: 1px 1px black;
     user-select: none;
 }
 
+.ties {
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 2px 2px black;
+    color: white;
+    user-select: none;
+}
 .play-again {
     height: 120px;
     width: 220px;
@@ -235,3 +251,32 @@ header, main {
     box-shadow: 3px 4px black;
     background-color: red;
 }
+
+.rockColor {
+    font-size: 25px;
+    color: red;
+    user-select: none;
+    text-shadow: 1px 1px black;
+}
+
+.paperColor {
+    font-size: 25px;
+    color: blue;
+    user-select: none;
+    text-shadow: 1px 1px black;
+}
+
+.scissorsColor {
+    font-size: 25px;
+    color: green;
+    user-select: none;
+    text-shadow: 1px 1px black;
+}
+
+/*@media (max-width: 750px){
+    body {
+      width: 50%;
+      height: 200px;
+      overflow: hidden;
+    }
+}*/

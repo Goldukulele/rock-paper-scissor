@@ -6,12 +6,39 @@ const playerScoreDisplay = document.querySelector('.playerScore');
 const compScoreDisplay = document.querySelector('.compScore');
 const gameChecker = document.querySelector('.gameChecker');
 
-const rockColor = document.querySelector('.rockColor');
-
 const content = document.createElement('div');
 const roundContent = document.createElement('div');
 const roundCheck = document.createElement('div');
+const beat = document.createElement('p');
+const lose = document.createElement('p');
+const ties = document.createElement('p');
+const rockColor = document.createElement('p');
+const paperColor = document.createElement('p');
+const scissorsColor = document.createElement('p');
 const resetButton = document.createElement('button');
+
+
+beat.classList.add('beat')
+beat.textContent = 'beats';
+lose.classList.add('loseTo')
+lose.textContent = 'loses to';
+ties.classList.add('ties')
+ties.textContent = 'Draw !';
+rockColor.classList.add('rockColor')
+rockColor.textContent = 'rock';
+paperColor.classList.add('paperColor')
+paperColor.textContent = 'paper';
+scissorsColor.classList.add('scissorsColor')
+scissorsColor.textContent = 'scissors';
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 
 let playerValue = '';
 let compValue = '';
@@ -75,22 +102,58 @@ function gameScore() {
         case (playerValue === 'paper' && compValue === 'rock'):
         case (playerValue === 'scissors' && compValue === 'paper'):
             playerScore += 1;
-            roundCheck.classList.add('roundCheck');
-            roundCheck.textContent = `Your ${playerValue} beats ${compValue}`;
-            gameChecker.appendChild(roundCheck);
+            switch (playerValue) {
+                case ('rock'):
+                    roundCheck.appendChild(rockColor);
+                    break;
+                case ('paper'):
+                    roundCheck.appendChild(paperColor);
+                    break;
+                case ('scissors'):
+                    roundCheck.appendChild(scissorsColor);
+            }
+            roundCheck.appendChild(beat);
+            switch (compValue) {
+                case ('rock'):
+                    roundCheck.appendChild(rockColor);
+                    break;
+                case ('paper'):
+                    roundCheck.appendChild(paperColor);
+                    break;
+                case ('scissors'):
+                    roundCheck.appendChild(scissorsColor);
+            }
             break;
         case (compValue === 'rock' && playerValue === 'scissors'):
         case (compValue === 'paper' && playerValue === 'rock'):
         case (compValue === 'scissors' && playerValue === 'paper'):
             compScore += 1;
-            roundCheck.classList.add('roundCheck');
-            roundCheck.textContent = `Your ${playerValue} loses to ${compValue}`;
-            gameChecker.appendChild(roundCheck);
+            switch (playerValue) {
+                case ('rock'):
+                    roundCheck.appendChild(rockColor);
+                    break;
+                case ('paper'):
+                    roundCheck.appendChild(paperColor);
+                    break;
+                case ('scissors'):
+                    roundCheck.appendChild(scissorsColor);
+            }
+            roundCheck.appendChild(lose);
+            switch (compValue) {
+                case ('rock'):
+                    roundCheck.appendChild(rockColor);
+                    break;
+                case ('paper'):
+                    roundCheck.appendChild(paperColor);
+                    break;
+                case ('scissors'):
+                    roundCheck.appendChild(scissorsColor);
+                    break;
+            }
             break;
         default:
-            roundCheck.classList.add('roundCheck');
-            roundCheck.textContent = `Your ${playerValue} draws with ${compValue}`;
-            gameChecker.appendChild(roundCheck);
+            roundCheck.appendChild(ties);
+
     }
 
     playerScoreDisplay.textContent = playerScore;
@@ -130,16 +193,24 @@ function gameEnd() {
 }
 
 function checkRound() {
-    let child = gameChecker.firstElementChild;
-    while (child) {
-        gameChecker.removeChild(child);
-        child = gameChecker.firstElementChild;
+    let gameChild = gameChecker.firstElementChild;
+    let roundChild = roundCheck.firstElementChild;
+    while (gameChild) {
+        gameChecker.removeChild(gameChild);
+        gameChild = gameChecker.firstElementChild;
+    }
+    while (roundChild) {
+        roundCheck.removeChild(roundChild);
+        roundChild = roundCheck.firstElementChild;
     }
 
     roundContent.classList.add('roundContent')
     roundContent.textContent = `Round ${round} !`;
     gameChecker.appendChild(roundContent);
+    document.querySelector('.roundContent').style.color = getRandomColor();
 
+    roundCheck.classList.add('roundCheck');
+    gameChecker.appendChild(roundCheck);
 }
 
 function playRound(item) {
