@@ -3,19 +3,11 @@
     font-family: art;
 }
 
-#wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-}
-
 body {
     background-image: url(images/8bit.png);
     background-attachment: fixed;
     background-size: cover;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -305,10 +297,13 @@ a {
     text-shadow: 1px 1px black;
 }
 
-/*@media (max-width: 750px){
-    body {
-      width: 50%;
-      height: 200px;
-      overflow: hidden;
+@media (max-height: 1080px) {
+    .title, .gameElement, 
+    .gameRound .sign, .gameChecker {
+        height: 150px;
     }
-}*/
+
+    .title {
+        font-size: 30px;
+    }
+}
